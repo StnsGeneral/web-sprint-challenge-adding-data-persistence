@@ -21,7 +21,9 @@ const insert = async (project) => {
   return {
     project_id: project_id,
     project_name: project.project_name,
-    project_description: project.project_description,
+    project_description: !project.project_description
+      ? null
+      : project.project_description,
     project_completed: project.project_completed === 1 ? true : false,
   };
 };
