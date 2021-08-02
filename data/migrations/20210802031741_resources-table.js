@@ -1,8 +1,8 @@
 exports.up = function (knex) {
   return knex.schema.createTable('resources', (tbl) => {
     tbl.increments('resource_id');
-    tbl.text('resource_name').unique().notNullable();
-    tbl.text('resource_description');
+    tbl.string('resource_name').unique().notNullable();
+    tbl.string('resource_description');
   });
 };
 
